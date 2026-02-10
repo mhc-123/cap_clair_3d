@@ -1,103 +1,204 @@
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Semaine 3 — Clarifier les priorités</title>
+  <style>
+    :root{
+      --vert: #A8C1A1;
+      --bleu-clair:#B8CBD0;
+      --bleu-nuit:#344D59;
+      --beige:#FFFAF3;
+      --azur-grise:#9BB0B8;
+      --terracotta:#D49A89;
+      --marron:#815133;
+      --border: rgba(52,77,89,.14);
+      --muted: rgba(52,77,89,.72);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--beige);
+      color: var(--bleu-nuit);
+      line-height:1.45;
+    }
+    .wrap{max-width:920px;margin:0 auto;padding:24px 16px 56px}
+    .header{
+      display:flex;gap:14px;align-items:center;
+      background:#fff;border:1px solid var(--border);
+      border-radius:18px;padding:18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.04);
+    }
+    .logo{width:64px;height:64px;object-fit:contain}
+    h1{margin:0;font-size:28px;line-height:1.15}
+    .sub{margin:6px 0 0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+    @media (min-width: 860px){.grid{grid-template-columns:1fr 1fr}}
+    .card{
+      background:#fff;border:1px solid var(--border);
+      border-radius:18px;padding:16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.035);
+    }
+    .tag{
+      display:inline-block;
+      background: rgba(184,203,208,.55);
+      color: var(--bleu-nuit);
+      padding:6px 10px;border-radius:999px;
+      font-size:13px;margin-bottom:10px;
+    }
+    .callout{
+      background: rgba(168,193,161,.22);
+      border-left: 6px solid var(--vert);
+      padding:12px 14px;border-radius:14px;
+    }
+    .callout.warn{
+      background: rgba(212,154,137,.20);
+      border-left-color: var(--terracotta);
+    }
+    ul{margin:10px 0 0;padding-left:18px}
+    .checks label{display:flex;gap:10px;align-items:flex-start;padding:6px 0}
+    input[type="checkbox"]{margin-top:3px;transform:scale(1.05)}
+    .table{
+      width:100%;
+      border-collapse:separate;border-spacing:0;
+      border:1px solid var(--border);
+      border-radius:14px;overflow:hidden;margin-top:10px;
+    }
+    .table th{
+      text-align:left;
+      background: rgba(184,203,208,.35);
+      padding:10px;
+      font-size:14px;
+    }
+    .table td{padding:10px;border-top:1px solid rgba(52,77,89,.10)}
+    .line{
+      display:block;margin-top:10px;
+      border-bottom:2px dashed rgba(52,77,89,.25);
+      height:22px;
+    }
+    .btn{
+      display:inline-block;margin-top:10px;
+      padding:10px 14px;border-radius:14px;
+      background: var(--bleu-nuit);
+      color: var(--beige); text-decoration:none;
+    }
+    .btn:hover{opacity:.92}
+    .small{color:var(--muted);font-size:14px}
+    .hr{height:1px;background:rgba(52,77,89,.10);margin:12px 0}
+  </style>
+</head>
+<body>
+  <div class="wrap">
 
-<div class="dc-wrap">
-
-  <div class="dc-header">
-    <img class="dc-logo" src="{{ '/assets/img/logo.png' | relative_url }}" alt="Logo">
-    <div>
-      <h1 class="dc-title">Semaine 3 — Clarifier les priorités</h1>
-      <p class="dc-sub">Du moins important au plus important — pour retrouver une direction intérieure claire.</p>
-    </div>
-  </div>
-
-  <div class="dc-card">
-    <span class="dc-tag">Intention</span>
-    <div class="dc-callout">
-      <p><strong>Objectif :</strong> faire émerger ce qui compte vraiment maintenant, sortir de l’égalité entre tous les domaines, et créer un ordre intérieur clair.</p>
-      <p><strong>Ressenti visé :</strong> « Je sais où mettre mon énergie. »</p>
-    </div>
-  </div>
-
-  <div class="dc-grid">
-    <div class="dc-card">
-      <span class="dc-tag">Étape 1 — Domaines</span>
-      <p><strong>Consigne :</strong> coche. Tu peux en enlever 1 ou 2. Tu n’en ajoutes pas.</p>
-
-      - [ ] Travail / activité  
-      - [ ] Relations  
-      - [ ] Corps / santé / énergie  
-      - [ ] Environnement de vie  
-      - [ ] Temps / rythme / charge mentale  
-      - [ ] Projets / aspirations personnelles  
-      - [ ] Sécurité / stabilité (financière, émotionnelle)
-    </div>
-
-    <div class="dc-card">
-      <span class="dc-tag">Étape 2 — Importance ressentie</span>
-      <p>Pour chaque domaine, choisis <strong>une seule</strong> réponse :</p>
-
-      - Très secondaire  
-      - Secondaire  
-      - Important  
-      - <strong>Prioritaire</strong> (⚠️ un seul domaine peut être prioritaire)
-
-      <div class="dc-callout dc-warning">
-        <strong>Règle d’or :</strong> on ne cherche pas la logique parfaite. On cherche l’ordre juste <em>pour maintenant</em>.
+    <div class="header">
+      <!-- 🔧 Remplace le chemin si ton logo est ailleurs -->
+      <img class="logo" src="image/logo.png" alt="Logo">
+      <div>
+        <h1>Semaine 3 — Clarifier les priorités</h1>
+        <p class="sub">Du moins important au plus important — pour retrouver une direction intérieure claire.</p>
       </div>
     </div>
-  </div>
 
-  <div class="dc-card">
-    <span class="dc-tag">Étape 3 — Classement</span>
-    <p><strong>Consigne :</strong> mets dans l’ordre. Il n’y a pas de bon ordre. Il y a ton ordre, maintenant.</p>
-
-    <table class="dc-table">
-      <thead>
-        <tr><th>Rang (1 = le moins important)</th><th>Domaine</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td> </td></tr>
-        <tr><td>2</td><td> </td></tr>
-        <tr><td>3</td><td> </td></tr>
-        <tr><td>4</td><td> </td></tr>
-        <tr><td>5</td><td> </td></tr>
-        <tr><td>6</td><td> </td></tr>
-        <tr><td>7</td><td> </td></tr>
-      </tbody>
-    </table>
-
-    <div class="dc-callout" style="margin-top:12px;">
-      Mettre un domaine après un autre <strong>n’est pas</strong> l’abandonner.  
-      C’est arrêter de vouloir tout traiter en même temps.
-    </div>
-  </div>
-
-  <div class="dc-grid">
-    <div class="dc-card">
-      <span class="dc-tag">Étape 4 — Vérification</span>
-      <p>Deux questions seulement :</p>
-      <ul>
-        <li>Quand je regarde cet ordre, je me sens plutôt : <strong>soulagée</strong> ou <strong>tendue</strong> ?</li>
-        <li>Si je respecte cet ordre pendant quelques semaines, est-ce que ça m’apaise ?</li>
-      </ul>
-      <p><strong>Si c’est tendu :</strong> j’ajuste l’ordre, pas moi.</p>
-    </div>
-
-    <div class="dc-card">
-      <span class="dc-tag">Étape 5 — Direction</span>
-      <p><strong>Une seule phrase :</strong></p>
-      <div class="dc-callout">
-        <p style="margin:0;"><strong>En ce moment, ma priorité, c’est…</strong></p>
-        <p style="margin:10px 0 0;">______________________________</p>
+    <div class="card" style="margin-top:14px">
+      <span class="tag">Intention</span>
+      <div class="callout">
+        <p><strong>Objectif :</strong> faire émerger ce qui compte vraiment maintenant, sortir de l’égalité entre tous les domaines, et créer un ordre intérieur clair.</p>
+        <p><strong>Ressenti visé :</strong> « Je sais où mettre mon énergie. »</p>
       </div>
-      <p style="margin-top:10px;">Pas d’action. Pas de plan. Juste une direction claire.</p>
     </div>
-  </div>
 
-  <div class="dc-card">
-    <span class="dc-tag">Fiche PDF</span>
-    <p>Si tu veux une version imprimable :</p>
-    <a class="dc-btn" href="{{ '/assets/fiche-semaine-3.pdf' | relative_url }}">Télécharger la fiche (PDF)</a>
-  </div>
+    <div class="grid">
 
-</div>
+      <div class="card">
+        <span class="tag">Étape 1 — Domaines</span>
+        <p class="small"><strong>Consigne :</strong> coche. Tu peux en enlever 1 ou 2. Tu n’en ajoutes pas.</p>
+        <div class="checks">
+          <label><input type="checkbox"> Travail / activité</label>
+          <label><input type="checkbox"> Relations</label>
+          <label><input type="checkbox"> Corps / santé / énergie</label>
+          <label><input type="checkbox"> Environnement de vie</label>
+          <label><input type="checkbox"> Temps / rythme / charge mentale</label>
+          <label><input type="checkbox"> Projets / aspirations personnelles</label>
+          <label><input type="checkbox"> Sécurité / stabilité (financière, émotionnelle)</label>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Étape 2 — Importance ressentie</span>
+        <p class="small">Pour chaque domaine, choisis <strong>une seule</strong> réponse :</p>
+        <ul>
+          <li>Très secondaire</li>
+          <li>Secondaire</li>
+          <li>Important</li>
+          <li><strong>Prioritaire</strong> (⚠️ un seul domaine peut être prioritaire)</li>
+        </ul>
+        <div class="callout warn" style="margin-top:12px">
+          <strong>Règle d’or :</strong> on ne cherche pas la logique parfaite. On cherche l’ordre juste <em>pour maintenant</em>.
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card">
+      <span class="tag">Étape 3 — Classement</span>
+      <p class="small"><strong>Consigne :</strong> mets dans l’ordre. Il n’y a pas de bon ordre. Il y a ton ordre, maintenant.</p>
+
+      <table class="table">
+        <thead>
+          <tr><th>Rang (1 = le moins important)</th><th>Domaine</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td></td></tr>
+          <tr><td>2</td><td></td></tr>
+          <tr><td>3</td><td></td></tr>
+          <tr><td>4</td><td></td></tr>
+          <tr><td>5</td><td></td></tr>
+          <tr><td>6</td><td></td></tr>
+          <tr><td>7</td><td></td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout" style="margin-top:12px">
+        Mettre un domaine après un autre <strong>n’est pas</strong> l’abandonner.  
+        C’est arrêter de vouloir tout traiter en même temps.
+      </div>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <span class="tag">Étape 4 — Vérification</span>
+        <p>Deux questions seulement :</p>
+        <ul>
+          <li>Quand je regarde cet ordre, je me sens plutôt : <strong>soulagée</strong> ou <strong>tendue</strong> ?</li>
+          <li>Si je respecte cet ordre pendant quelques semaines, est-ce que ça m’apaise ?</li>
+        </ul>
+        <p class="small"><strong>Si c’est tendu :</strong> j’ajuste l’ordre, pas moi.</p>
+      </div>
+
+      <div class="card">
+        <span class="tag">Étape 5 — Direction</span>
+        <p><strong>Une seule phrase :</strong></p>
+        <div class="callout">
+          <p style="margin:0"><strong>En ce moment, ma priorité, c’est…</strong></p>
+          <span class="line"></span>
+        </div>
+        <p class="small">Pas d’action. Pas de plan. Juste une direction claire.</p>
+      </div>
+
+    </div>
+
+    <div class="card">
+      <span class="tag">Fiche PDF</span>
+      <p class="small">Si tu veux une version imprimable :</p>
+      <a class="btn" href="assets/fiche-semaine-3.pdf">Télécharger la fiche (PDF)</a>
+      <div class="hr"></div>
+      <p class="small">Phrase repère : <strong>Tout n’est pas prioritaire en même temps.</strong></p>
+    </div>
+
+  </div>
+</body>
+</html>
+
