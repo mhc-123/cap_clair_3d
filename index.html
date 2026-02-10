@@ -200,15 +200,18 @@
         <p class="small"><strong>Si c’est tendu :</strong> j’ajuste l’ordre, pas moi.</p>
       </div>
 
-      <div class="card">
-        <span class="tag">Étape 5 — Direction</span>
-        <p><strong>Une seule phrase :</strong></p>
-        <div class="callout">
-          <p style="margin:0"><strong>En ce moment, ma priorité, c’est…</strong></p>
-          <span class="line"></span>
-        </div>
-        <p class="small">Pas d’action. Pas de plan. Juste une direction claire.</p>
-      </div>
+     <div class="card">
+  <span class="tag">Étape 5 — Direction</span>
+  <p><strong>Une seule phrase :</strong></p>
+
+  <div class="callout">
+    <label class="small" for="priority"><strong>En ce moment, ma priorité, c’est…</strong></label>
+    <input id="priority" class="field" data-save="priority" placeholder="Écris ta phrase ici…">
+  </div>
+
+  <p class="small">Pas d’action. Pas de plan. Juste une direction claire.</p>
+</div>
+
 
     </div>
 
@@ -219,6 +222,13 @@
       <div class="hr"></div>
       <p class="small">Phrase repère : <strong>Tout n’est pas prioritaire en même temps.</strong></p>
     </div>
+
+    <div class="actions">
+  <button class="btn" type="button" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
+  <button class="btn secondary" type="button" onclick="downloadAnswers()">Télécharger mes réponses</button>
+  <button class="btn ghost" type="button" onclick="resetAnswers()">Réinitialiser</button>
+</div>
+<p class="small">✅ Sauvegarde automatique sur cet appareil.</p>
 
   </div>
 </body>
